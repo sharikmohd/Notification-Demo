@@ -25,7 +25,7 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 587
-          secure: false
+          secure: true
           username: ${{ secrets.GMAIL_USERNAME }}
           password: ${{ secrets.GMAIL_APP_PASSWORD }}
           subject: "PR #${{ github.event.pull_request.number }} merged to main"
