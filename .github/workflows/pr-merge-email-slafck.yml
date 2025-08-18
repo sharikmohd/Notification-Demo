@@ -25,7 +25,7 @@ jobs:
         with:
           server_address: ${{ secrets.MAIL_HOST }}
           server_port: ${{ secrets.MAIL_PORT }}
-          secure: true
+          secure: false
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "PR #${{ github.event.pull_request.number }} merged to main"
