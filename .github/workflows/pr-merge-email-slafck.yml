@@ -23,11 +23,11 @@ jobs:
       - name: Notify Stakeholders via Email
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail.com
-          server_port: 587
+          server_address: ${{ secrets.MAIL_HOST }}
+          server_port: ${{ secrets.MAIL_PORT }}
           secure: true
-          username: ${{ secrets.GMAIL_USERNAME }}
-          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
           subject: "PR #${{ github.event.pull_request.number }} merged to main"
           body: |
             The following pull request has been merged into the main branch:
@@ -38,4 +38,4 @@ jobs:
             URL: ${{ github.event.pull_request.html_url }}
           to: |
             mohd20sharik@gmail.com
-          from: GitHub Actions <${{ secrets.GMAIL_USERNAME }}>
+          from: GitHub Actions <${{ secrets.MAIL_USERNAME }}>
